@@ -24,7 +24,17 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		//
+		\Blade::setRawTags("{{", "}}");
+
+		// // Route::get('articles/{articles}')
+		// // use single quote for back slash !!!
+		// $router->model('articles', 'App\Article');
+
+		// // or use bind() tfor more complex logic
+		// $router->bind('articles', function($id) { 
+		// 	return \App\Article::publiched()->findOrFail();
+		// })
+
 	}
 
 	/**

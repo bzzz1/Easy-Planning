@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA;EACC,aAAQ,EAAA;EACT;IACE,cAAO,EAAA","file":"style.css","sourcesContent":["body {\r\n\tmargin: 0px;\r\n\th1 {\r\n\t\tcolor: green;\r\n\t}\r\n}"],"sourceRoot":"/source/"}

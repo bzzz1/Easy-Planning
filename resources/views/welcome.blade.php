@@ -36,6 +36,10 @@
 		</style>
 	</head>
 	<body>
+	<h1>Content: {{ $var }}</h1>
+	<h2>Content: {{ $var1 }}</h2>
+	<h2>{{ Carbon::now() }}</h2>
+	<hr>
 		<div class="container">
 			<div class="content">
 				<div class="title">Laravel 5</div>
