@@ -19,3 +19,15 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('app_test', function() { 
+	return redirect('app')->with([
+		'flash_message' 			=> 'text',
+		'flash_message_important'  => true
+	]);
+});
+
+
+Route::get('app', function() { 
+	return view('app');
+});

@@ -33,6 +33,41 @@ class HomeController extends Controller {
 	public function index()
 	{
 		return view('home');
+
+		// \Session::flash('flash_message', 'text');
+		
+		// or use redirect()->with()
+
+		// return redirect('articles')-with([
+		// 	'flash_message' 			=> 'text'
+		// 	'flash_message_importnant'  => true
+		// ]);
+
+		// install package composer require laracasts/flash
+
+		/*------------------------------------------------
+		| PIVOT Tables
+		------------------------------------------------*/
+		Schema::create('article_tag', function(Blueprint $table){
+			$table->integer('article_id')->unsigned()->index();
+			$table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
+
+			$table->integer('tag_id')->unsigned()->index();
+			$table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+		});
+
+		class Tag extends Model {
+			public function articels() {
+				return $this->belongsToMany('App\Article', 'article_tag', 'article_identifier');
+					// ->withTimestamps();
+			}
+		}
+
+		$article->tags()->attach(1);
+
+		\App\Tag::lists('name', 'name'); 
+		// returns ['work'=>'work']
+		/*----------------------------------------------*/
 	}
 
 }

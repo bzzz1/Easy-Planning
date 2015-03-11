@@ -19,6 +19,22 @@
 	<![endif]-->
 </head>
 <body>
+
+	@if (Session::has('flash_message'))
+		<div class="alert alert-success {{ Session::has('flash_message_important') ? 'alert-important' : '' }}">
+			@if (Session::has('flash_message_importnat'))
+				<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+			@endif
+		</div>
+	@endif
+
+{{-- use select2 plugin --}}
+<select name="tags[]" id="" multiple>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+</select>
+
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">

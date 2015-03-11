@@ -12,7 +12,8 @@
 		"ckeditor/ckeditor": "dev-master",
 		"sunhater/kcfinder": "dev-master",
 		"phpunit/phpunit": "4.7.*@dev",
-		"maatwebsite/excel": "~2.0.0"
+		"maatwebsite/excel": "~2.0.0",
+		"laracasts/flash": "~1.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

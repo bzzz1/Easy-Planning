@@ -12,6 +12,20 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    // mix.less('app.less');
     mix.sass('style.scss');
+    // mix.less('app.less');
+    // mix.sass('style.scss').styles().scripts();
+    
+    mix.styles([
+		'vendor/normalize.css',
+		'app.css'
+    ], 'public/output/final.css', 'public/css');
+
+	// mix.phpUnit();
+	// mix.phpSpec();
 });
+
+
+// run gulp --production to compile minified version
+// run gulp watch
+// run gulp tdd

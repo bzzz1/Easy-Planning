@@ -11,7 +11,12 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		// all that happens after all service providers got registered
+		view()->composer('partials/nav', function($view) { 
+			$view->with('latest', \App\Article::latest()->first());
+		});	
+
+		// or if its a lot use another Provider such as ViewComposerServiceProvider
 	}
 
 	/**
@@ -25,10 +30,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind(
-			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
-		);
+		$this->app->bind('Illuminate\Contracts\Auth\Registrar', 'App\Services\Registrar');
 	}
 
 }
