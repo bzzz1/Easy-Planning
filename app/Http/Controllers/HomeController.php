@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Repositories\FooRepository;
+
 class HomeController extends Controller {
 
 	/*
@@ -18,11 +20,14 @@ class HomeController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(FooRepository $repository)
 	{
-		$this->middleware('auth');
+		$this->repository = $repository;
+		// or just use method injection
+
+		// $this->middleware('auth');
 		// $this->middleware('auth', ['only' => 'index']);
-		// $this->middleware('auth', ['except' => 'index']);
+		$this->middleware('auth', ['except' => 'repository']);
 	}
 
 	/**
@@ -56,12 +61,12 @@ class HomeController extends Controller {
 			$table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 		});
 
-		class Tag extends Model {
-			public function articels() {
-				return $this->belongsToMany('App\Article', 'article_tag', 'article_identifier');
-					// ->withTimestamps();
-			}
-		}
+		// class Tag extends Model {
+		// 	public function articles() {
+		// 		return $this->belongsToMany('App\Article', 'article_tag', 'article_identifier');
+		// 			// ->withTimestamps();
+		// 	}
+		// }
 
 		$article->tags()->attach(1);
 
@@ -70,4 +75,13 @@ class HomeController extends Controller {
 		/*----------------------------------------------*/
 	}
 
+	/*------------------------------------------------
+	| LARACASTS #26
+	------------------------------------------------*/
+	public function repository(FooRepository $repository) {
+		// bad practice
+		// $repository = new \App\Repositories\FooRepository();
+
+		return $repository->get();		
+	}
 }

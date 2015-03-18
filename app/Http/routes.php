@@ -10,8 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+		dd(Carbon::now());
 
 Route::get('/', 'WelcomeController@index');
+Route::get('repository', 'HomeController@repository');
 
 Route::get('home', 'HomeController@index');
 
@@ -31,3 +33,30 @@ Route::get('app_test', function() {
 Route::get('app', function() { 
 	return view('app');
 });
+
+
+/*------------------------------------------------
+| IoC
+------------------------------------------------*/
+interface BarInterface {}
+
+class Bar implements BarInterface {}
+
+App::bind('BarInterface', 'Bar');
+
+class Foo {
+	public function __construct(BarInterface $bar) {
+		dd($bar);
+	}
+}
+
+Route::get('bar', function(BarInterface $bar) {
+	dd($bar);
+});
+
+// App::make('BarInterface');
+// app()['BarInterface']
+// app('BarInterface')
+
+/*----------------------------------------------*/
+

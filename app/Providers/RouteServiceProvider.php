@@ -28,9 +28,24 @@ class RouteServiceProvider extends ServiceProvider {
 
 		// // Route::get('articles/{articles}')
 		// // use single quote for back slash !!!
+
+		/*------------------------------------------------
+		| ROUTE MODEL BINDING!!!
+		------------------------------------------------*/
 		// $router->model('articles', 'App\Article');
 
-		// // or use bind() tfor more complex logic
+		// to prevent access to undisplayed blog entries
+		// $router->bind('articles', function($id) { 
+		// 	return \App\Article::published()->findOrFail($id);
+		// });
+
+		// $router->model('tags', 'App\Tag');
+		// $router->bind('tags', function($name) { 
+		// 	return \App\Tag::where('name', name)->firstOrFail();
+		// });
+
+
+		// // or use bind() for more complex logic
 		// $router->bind('articles', function($id) { 
 		// 	return \App\Article::publiched()->findOrFail();
 		// })

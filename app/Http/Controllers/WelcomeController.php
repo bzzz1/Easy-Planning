@@ -44,4 +44,10 @@ class WelcomeController extends Controller {
 		]);
 	}
 
+	public function tag(Tag $tag) {
+		// $articles = $tag->articles // !!! give array without ()
+		$articles = $tag->articles()->published()->get(); // !!! give array without ()
+
+		return view('someview', compact('articles'));
+	}
 }

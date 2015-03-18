@@ -9,8 +9,6 @@
 		"doctrine/dbal": "2.6.*@dev",
 		"illuminate/html": "5.0.*@dev",
 		"phpmailer/phpmailer": "dev-master",
-		"ckeditor/ckeditor": "dev-master",
-		"sunhater/kcfinder": "dev-master",
 		"phpunit/phpunit": "4.7.*@dev",
 		"maatwebsite/excel": "~2.0.0",
 		"laracasts/flash": "~1.3"
