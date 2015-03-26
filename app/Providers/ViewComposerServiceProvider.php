@@ -30,6 +30,12 @@ class ViewComposerServiceProvider extends ServiceProvider {
 		// view()->composer('partials/nav', function($view) { 
 		// 	$view->with('latest', \App\Article::latest()->first());
 		// });	
+
+		// View::composers([
+			// 'App\Http\ViewComposers\AdminComposer' => ['admin.index', 'admin.profile'],
+			// 'App\Http\ViewComposers\UserComposer' => 'user',
+			// 'App\Http\ViewComposers\ProductComposer' => 'product'
+		// ]);
 	}
 
 }

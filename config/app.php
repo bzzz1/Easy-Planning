@@ -201,7 +201,7 @@ return [
 		'Html'		=> 'Illuminate\Html\HtmlFacade',
 		'Excel' 	=> 'Maatwebsite\Excel\Facades\Excel',
 		'Carbon' 	=> 'Carbon\Carbon',
-
+		'Faker'		=> 'Faker\Factory'
 	],
 
 ];

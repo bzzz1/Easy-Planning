@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Blade;
 
 class RouteServiceProvider extends ServiceProvider {
 
@@ -24,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		\Blade::setRawTags("{{", "}}");
+		Blade::setRawTags("{{", "}}");
 
 		// // Route::get('articles/{articles}')
 		// // use single quote for back slash !!!
