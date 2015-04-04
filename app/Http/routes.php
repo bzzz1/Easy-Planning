@@ -10,7 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-		dd(Carbon::now());
 
 Route::get('/', 'WelcomeController@index');
 Route::get('repository', 'HomeController@repository');
