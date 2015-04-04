@@ -10,6 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+// Route::get('/i{item_id}', function() { 
+// 	echo 'item page';	
+// });
+// Route::get('/c{category_id}', function() { 
+// 	echo 'category page';	
+// });
 
 Route::get('/', 'WelcomeController@index');
 Route::get('repository', 'HomeController@repository');
